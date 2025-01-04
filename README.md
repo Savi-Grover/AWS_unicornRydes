@@ -11,7 +11,7 @@ The app will let you create an account and log in, then request a ride by clicki
 1. Host **Amplify** app ( used AWS workshop - hands on serverless web app ) using **GitHub** option. 
 2. Create a new user pool in **Cognito** and update these settings in config.js file . Now attempt to signup and get api token
 3. Create **DynamoDB** table to store data values ( user, rideID )
-4. Create node **Lamabda** function ( table name should be correct ) along with Test Function code
+4. Create node **Lambda** function ( table name should be correct ) along with Test Function code
 5. Hook DynamoDB table id with a **Role**, providing policy - DynamoDBWriteAcess ; AWSLambdaBasicExecutionRole
 6. Create api via **ApiGateway** - POST type, set authorization token value as api token ; resource set by role value
 7. Deploy API and Test the app.
