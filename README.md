@@ -1,18 +1,21 @@
 # AWS Project - Build a Full End-to-End Web Application with 7 Services | Step-by-Step Tutorial
 
-This repo contains the code files used in this [YouTube video](https://youtu.be/K6v6t5z6AsU).
+**App Deployed** - https://main.d3ddjx9lca180.amplifyapp.com/
 
 ## TL;DR
-We're creating a web application for a unicorn ride-sharing service called Wild Rydes (from the original [Amazon workshop](https://aws.amazon.com/serverless-workshops)).  The app uses IAM, Amplify, Cognito, Lambda, API Gateway and DynamoDB, with code stored in GitHub and incorporated into a CI/CD pipeline with Amplify.
+We're creating a web application for a unicorn ride-sharing service called Unicorn Rydes.The app uses AWS IAM, Amplify, Cognito, Lambda, API Gateway and DynamoDB, with code stored in GitHub and incorporated into a CI/CD pipeline with Amplify.
 
-The app will let you create an account and log in, then request a ride by clicking on a map (powered by ArcGIS).  The code can also be extended to build out more functionality.
+The app will let you create an account and log in, then request a ride by clicking on a map.
 
-## Cost
-All services used are eligible for the [AWS Free Tier](https://aws.amazon.com/free/).  Outside of the Free Tier, there may be small charges associated with building the app (less than $1 USD), but charges will continue to incur if you leave the app running.  Please see the end of the YouTube video for instructions on how to delete all resources used in the video.
-
-## The Application Code
-The application code is here in this repository.
-
+## Steps
+1. Host a Amplify app ( used AWS workshop - hands on serverless web app ) using GitHub option.
+2. Create a new user pool in Cognito and update these settings in config.js file . Now attempt to signup and get api endpoint
+3. Create DynamoDB table to store data values ( user, rideID )
+4. Create node Lamabda function ( table name should be correct ) along with Test Function
+5. Hook the DynamoDB table id with a Role, providing policy - DynamoDBWriteAcess ; AWSLambdaBasicExecutionRole
+6. Create invoke api - POST type, set authorization token value as api endpoint ; resource set by role
+7. Deploy API and Test the app.
+   
 ## The Lambda Function Code
 Here is the code for the Lambda function, originally taken from the [AWS workshop](https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/module-3/ ), and updated for Node 20.x:
 
